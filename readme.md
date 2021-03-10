@@ -1,14 +1,14 @@
 # nativefier-catalog
 
-> Calalog of nativefier apps
+> Calalog of [nativefier](https://github.com/nativefier/nativefier) apps
 
 ## Install
 
 ```
-$ npm install nativefier-catalog
+$ npm install --global https://github.com/mattruzzi/nativefier-catalog
 ```
 
-## Usage
+<!-- ## Usage
 
 ```js
 import nativefierCatalog from 'nativefier-catalog';
@@ -38,24 +38,45 @@ Default: `false`
 
 Lorem ipsum.
 
+
 ## CLI
 
 ```
 $ npm install --global nativefier-catalog
 ```
+-->
+
+## Usage
+
+Type the name of an app to search or select it from the list to create it.
 
 ```
-$ nativefier-catalog --help
+$ nativefier-catalog
+? What app do you want to create …
+Gmail
+Google Meet
+Google Docs
+Google Sheets
+Google Slides
+```
 
-  Usage
-    nativefier-catalog [input]
+## Dev
+
+```
+git clone https://github.com/mattruzzi/nativefier-catalog.git
+cd nativefier-catalog
+npm install
+npm link
+```
+
+### Adding an app to apps.json
+
+```
+$ ./addApp.js [app-token] --name "App Name" --targetUrl https://appurl.example
 
   Options
-    --foo  Lorem ipsum [Default: false]
+    See https://github.com/nativefier/nativefier/blob/master/docs/api.md
 
   Examples
-    $ nativefier-catalog
-    unicorns & rainbows
-    $ nativefier-catalog ponies
-    ponies & rainbows
+    $ ./addApp.js google-docs --name "Google Docs" --targetUrl https://docs.google.com/
 ```

@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 'use strict';
-const meow = require('meow');
-const nativefierCatalog = require('.');
+//const meow = require('meow');
+const { AutoComplete } = require('enquirer');
+const apps = require("./apps.json");
+const createNativefierApp = require('.');
 
-const cli = meow(`
+/*const cli = meow(`
 	Usage
 	  $ nativefier-catalog [input]
 
@@ -21,6 +23,23 @@ const cli = meow(`
 			type: 'boolean'
 		}
 	}
+});*/
+var appsList = [];
+Object.keys(apps).forEach(element => {
+	appsList.push({ value: element, name: apps[element].name })
+});
+//appsList.value = Object.keys(apps);
+//appsList.name = apps[Object.keys(apps)].name;
+const prompt = new AutoComplete({
+	name: 'app',
+	message: 'What app do you want to create',
+	limit: 10,
+	initial: 0,
+	choices: appsList
 });
 
-console.log(nativefierCatalog(cli.input[0] || 'unicorns'));
+prompt.run()
+	.then(answer => createNativefierApp(answer))
+	.catch(console.error);
+
+//console.log(nativefierCatalog(cli.input[0] || 'unicorns'));

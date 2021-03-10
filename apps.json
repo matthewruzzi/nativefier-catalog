@@ -1,0 +1,24 @@
+{
+  "gmail": {
+    "name": "Gmail",
+    "targetUrl": "https://mail.google.com/",
+    "counter": true,
+    "bounce": true
+  },
+  "google-meet": {
+    "name": "Google Meet",
+    "targetUrl": "https://meet.google.com/"
+  },
+  "google-docs": {
+    "name": "Google Docs",
+    "targetUrl": "https://docs.google.com/"
+  },
+  "google-sheets": {
+    "name": "Google Sheets",
+    "targetUrl": "https://sheets.google.com/"
+  },
+  "google-slides": {
+    "name": "Google Slides",
+    "targetUrl": "https://slides.google.com/"
+  }
+}
