@@ -18,6 +18,7 @@
 		"node": ">=12"
 	},
 	"scripts": {
+		"start": "node cli.js",
 		"test": "xo && ava"
 	},
 	"files": [
