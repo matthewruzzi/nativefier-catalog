@@ -71,6 +71,87 @@
         "comment": "Note: lying about the User Agent is required, else Google will notice your \"Chrome\" isn't a real Chrome, and will refuse access."
       }
     },
+    "youtube": {
+      "name": "YouTube",
+      "targetUrl": "https://www.youtube.com/",
+      "additionalOptions": {
+        "Shows the app in the tray": {
+          "flags": {
+            "tray": "true"
+          },
+          "default": true,
+          "comment": "Note: Minimizes the app to the task tray on close, allowing it to run in the background."
+        },
+        "Change user agent to prevent Google from blocking access": {
+          "flags": {
+            "user-agent": "firefox"
+          },
+          "default": true,
+          "comment": "Note: lying about the User Agent is required, else Google will notice your \"Chrome\" isn't a real Chrome, and will refuse access."
+        },
+        "Open the base youtube subdomains inside the app.": {
+          "flags": {
+            "internal-urls": "(.*?)(accounts\.google\.com/ServiceLogin|www\.youtube\.com|youtu\.be)(.*?)"
+          },
+          "default": true,
+          "comment": "Note: Allows the base YouTube domains to open inside the app."
+        }
+      }
+    },
+    "youtube-music": {
+      "name": "YouTube",
+      "targetUrl": "https://music.youtube.com/",
+      "additionalOptions": {
+        "Shows the app in the tray": {
+          "flags": {
+            "tray": "true"
+          },
+          "default": true,
+          "comment": "Note: Minimizes the app to the task tray on close, allowing it to run in the background."
+        },
+        "Change user agent to prevent Google from blocking access": {
+          "flags": {
+            "user-agent": "firefox"
+          },
+          "default": true,
+          "comment": "Note: lying about the User Agent is required, else Google will notice your \"Chrome\" isn't a real Chrome, and will refuse access."
+        },
+        "Open youtube music subdomains inside the app.": {
+          "flags": {
+            "internal-urls": "(.*?)(accounts\.google\.com/ServiceLogin|music\.youtube\.com)(.*?)"
+          },
+          "default": true,
+          "comment": "Note: Allows YouTube Music domains to open inside the app."
+        }
+      }
+    },
+    "youtube-studio": {
+      "name": "YouTube",
+      "targetUrl": "https://studio.youtube.com/",
+      "additionalOptions": {
+        "Shows the app in the tray": {
+          "flags": {
+            "tray": "true"
+          },
+          "default": true,
+          "comment": "Note: Minimizes the app to the task tray on close, allowing it to run in the background."
+        },
+        "Change user agent to prevent Google from blocking access": {
+          "flags": {
+            "user-agent": "firefox"
+          },
+          "default": true,
+          "comment": "Note: lying about the User Agent is required, else Google will notice your \"Chrome\" isn't a real Chrome, and will refuse access."
+        },
+        "Open youtube studio subdomains inside the app.": {
+          "flags": {
+            "internal-urls": "(.*?)(accounts\.google\.com/ServiceLogin|studio\.youtube\.com)(.*?)"
+          },
+          "default": true,
+          "comment": "Note: Allows YouTube Studio domains to open inside the app."
+        }
+      }
+    },
     "example2": {
       "name": "Example2",
       "targetUrl": "https://example.net/",
