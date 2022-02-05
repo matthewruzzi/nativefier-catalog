@@ -91,7 +91,7 @@
         },
         "Open the base youtube subdomains inside the app.": {
           "flags": {
-            "internal-urls": "(.*?)(accounts\.google\.com/ServiceLogin|www\.youtube\.com|youtu\.be)(.*?)"
+            "internal-urls": "(.*?)(accounts.google.com/ServiceLogin|www.youtube.com|youtu.be)(.*?)"
           },
           "default": true,
           "comment": "Note: Allows the base YouTube domains to open inside the app."
@@ -118,7 +118,7 @@
         },
         "Open youtube music subdomains inside the app.": {
           "flags": {
-            "internal-urls": "(.*?)(accounts\.google\.com/ServiceLogin|music\.youtube\.com)(.*?)"
+            "internal-urls": "(.*?)(accounts.google.com/ServiceLogin|music.youtube.com)(.*?)"
           },
           "default": true,
           "comment": "Note: Allows YouTube Music domains to open inside the app."
@@ -145,7 +145,7 @@
         },
         "Open youtube studio subdomains inside the app.": {
           "flags": {
-            "internal-urls": "(.*?)(accounts\.google\.com/ServiceLogin|studio\.youtube\.com)(.*?)"
+            "internal-urls": "(.*?)(accounts.google.com/ServiceLogin|studio.youtube.com)(.*?)"
           },
           "default": true,
           "comment": "Note: Allows YouTube Studio domains to open inside the app."
