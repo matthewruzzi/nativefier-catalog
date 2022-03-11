@@ -5,7 +5,7 @@
 ## Install
 
 ```
-$ npm install --global https://github.com/mattruzzi/nativefier-catalog
+npm install --global https://github.com/mattruzzi/nativefier-catalog
 ```
 
 <!-- ## Usage
