@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 'use strict';
-//const meow = require('meow');
+// const meow = require('meow');
 const { AutoComplete } = require('enquirer');
-const apps = require("./apps.json");
+const fs = require('fs');
 const createNativefierApp = require('.');
+const YAML = require('yaml');
+const apps = YAML.parse(fs.readFileSync('./apps.yaml', 'utf8'));
 
 /*const cli = meow(`
 	Usage
@@ -28,8 +30,8 @@ var appsList = [];
 Object.keys(apps).forEach(element => {
 	appsList.push({ value: element, name: apps[element].name })
 });
-//appsList.value = Object.keys(apps);
-//appsList.name = apps[Object.keys(apps)].name;
+// appsList.value = Object.keys(apps);
+// appsList.name = apps[Object.keys(apps)].name;
 const prompt = new AutoComplete({
 	name: 'app',
 	message: 'What app do you want to create',
@@ -42,4 +44,4 @@ prompt.run()
 	.then(answer => createNativefierApp(answer))
 	.catch(console.error);
 
-//console.log(nativefierCatalog(cli.input[0] || 'unicorns'));
+// console.log(nativefierCatalog(cli.input[0] || 'unicorns'));

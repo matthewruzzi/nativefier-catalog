@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 const fs = require('fs');
-const fileName = './apps.json';
-const file = require(fileName);
+const fileName = './apps.yaml';
 const meow = require('meow');
+const YAML = require('yaml');
+const apps = YAML.parse(fs.readFileSync(fileName, 'utf8'))
+
 const cli = meow(`Usage
     $ ./addApp.js [app-token] --name "App Name" --targetUrl https://appurl.example
 
@@ -12,8 +14,8 @@ const cli = meow(`Usage
   Examples
     $ ./addApp.js google-docs --name "Google Docs" --targetUrl https://docs.google.com/`);
 file[cli.input[0]] = cli.flags;
-fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
+fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeYAML(err) {
     if (err) return console.log(err);
-    console.log(JSON.stringify(file));
+    console.log(YAML.stringify(file));
     console.log('writing to ' + fileName);
 });

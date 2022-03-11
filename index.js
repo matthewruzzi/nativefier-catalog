@@ -1,43 +1,45 @@
-var nativefier = require("nativefier").default;
-const apps = require("./apps.json");
-const { MultiSelect } = require('enquirer');
+const nativefier = require("nativefier").default;
+const { MultiSelect } = require("enquirer");
+const fs = require("fs");
+const YAML = require("yaml");
+const apps = YAML.parse(fs.readFileSync("./apps.yaml", "utf8"));
 
 const createNativefierApp = (name = {}) => {
 	if (typeof name !== "string") {
 		throw new TypeError(`Expected a string, got ${typeof name}`);
 	}
+
 	if (apps[name].hasOwnProperty("additionalOptions")) {
-		var additionalOptionsList = Object.keys(apps[name].additionalOptions);
-		console.log(additionalOptionsList)
-		const prompt = new MultiSelect({  //TODO: Make options with "default": true selected by default
-			name: 'additionalOptions',
-			message: 'Available Additional Options ',
-			hint: '(Use <space> to select, <return> to submit)',
-			choices: additionalOptionsList
+		let additionalOptionsList = Object.keys(apps[name].additionalOptions);
+		console.log(additionalOptionsList);
+		const prompt = new MultiSelect({
+			// TODO: Make options with "default": true selected by default
+			name: "additionalOptions",
+			message: "Available Additional Options ",
+			hint: "(Use <space> to select, <return> to submit)",
+			choices: additionalOptionsList,
 		});
 
-		prompt.run()
-			.then(answer => runNativefier(getOptions(name, answer)))
+		prompt
+			.run()
+			.then((answer) => runNativefier(getOptions(name, answer)))
 			.catch(console.error);
-	}
-	else {
-		var options = [];
+	} else {
+		let options = [];
 		options.name = apps[name].name;
 		options.targetUrl = apps[name].targetUrl;
 		runNativefier(options);
 	}
-}
-
-
-
-
+};
 
 function getOptions(name = {}, selectedAdditionalOptions = {}) {
 	var options = [];
-	selectedAdditionalOptions.forEach(element => {
-		Object.keys(apps[name].additionalOptions[element].flags).forEach(option => {
-			options[option] = apps[name].additionalOptions[element].flags[option]
-		});
+	selectedAdditionalOptions.forEach((element) => {
+		Object.keys(apps[name].additionalOptions[element].flags).forEach(
+			(option) => {
+				options[option] = apps[name].additionalOptions[element].flags[option];
+			}
+		);
 	});
 	options.name = apps[name].name;
 	options.targetUrl = apps[name].targetUrl;
@@ -57,4 +59,5 @@ function runNativefier(config = {}) {
 		console.log("App has been nativefied to", appPath);
 	});
 }
+
 module.exports = createNativefierApp;
