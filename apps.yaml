@@ -1,4 +1,3 @@
-
 gmail:
   name: Gmail
   targetUrl: https://mail.google.com/
@@ -11,7 +10,7 @@ gmail:
       comment: (macOS only) Use a counter that persists even with window focus for
         the application badge for sites that use an "(X)" format counter in the page
         title (i.e. Gmail).
-    Change user agent to prevent Google from blocking access:
+    Change user agent to prevent Google from blocking access: &google-ua-fix
       flags:
         user-agent: firefox
       default: true
@@ -31,32 +30,17 @@ google-docs:
   name: Google Docs
   targetUrl: https://docs.google.com/
   additionalOptions:
-    Change user agent to prevent Google from blocking access:
-      flags:
-        user-agent: firefox
-      default: true
-      comment: 'Note: lying about the User Agent is required, else Google will notice
-        your "Chrome" isn''t a real Chrome, and will refuse access.'
+    *google-ua-fix
 google-sheets:
   name: Google Sheets
   targetUrl: https://sheets.google.com/
   additionalOptions:
-    Change user agent to prevent Google from blocking access:
-      flags:
-        user-agent: firefox
-      default: true
-      comment: 'Note: lying about the User Agent is required, else Google will notice
-        your "Chrome" isn''t a real Chrome, and will refuse access.'
+    *google-ua-fix
 google-slides:
   name: Google Slides
   targetUrl: https://slides.google.com/
   additionalOptions:
-    Change user agent to prevent Google from blocking access:
-      flags:
-        user-agent: firefox
-      default: true
-      comment: 'Note: lying about the User Agent is required, else Google will notice
-        your "Chrome" isn''t a real Chrome, and will refuse access.'
+    *google-ua-fix
 example2:
   name: Example2
   targetUrl: https://example.net/
