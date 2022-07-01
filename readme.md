@@ -1,4 +1,6 @@
 # nativefier-catalog
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmattruzzi%2Fnativefier-catalog.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmattruzzi%2Fnativefier-catalog?ref=badge_shield)
+
 
 > Calalog of [nativefier](https://github.com/nativefier/nativefier) apps
 
@@ -80,3 +82,7 @@ $ ./addApp.js [app-token] --name "App Name" --targetUrl https://appurl.example
   Examples
     $ ./addApp.js google-docs --name "Google Docs" --targetUrl https://docs.google.com/
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmattruzzi%2Fnativefier-catalog.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmattruzzi%2Fnativefier-catalog?ref=badge_large)
